@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">VICTOR_1202150100_MODUL5</string>
+    <string name="app_name">App Todo</string>
+    <string name="action_settings">Settings</string>
 </resources>
