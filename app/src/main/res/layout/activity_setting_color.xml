@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RadioGroup
+        android:id="@+id/RadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/RadioRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Red" />
+
+        <RadioButton
+            android:id="@+id/RadioPurple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RadioRed"
+            android:text="Purple" />
+
+        <RadioButton
+            android:id="@+id/RadioBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/RadioBlue"
+            android:text="Blue" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/ChangeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RadioGroup"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@color/colorPrimary"
+        android:textColor="@color/white"
+        android:text="Change Color" />
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package enpi23.modul5.prak.andro.victor_1202150100_modul5;
+package enpi23.modul5.prak.andro.victor_1202150100_modul5.Helper;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -14,10 +14,10 @@ import android.support.v7.widget.helper.ItemTouchHelper;
 import android.view.View;
 
 /**
- * Created by hakimrizki on 23/03/18.
+ * Created by enpi23 on 23/03/18.
  */
 
-public class SwipeToDelete extends ItemTouchHelper.SimpleCallback {
+public class SwipeHelper extends ItemTouchHelper.SimpleCallback {
 
     private SwipetoDismissCallBack swipetoDismissCallBack;
 
@@ -35,7 +35,7 @@ public class SwipeToDelete extends ItemTouchHelper.SimpleCallback {
 
     private final int SWIPE_LEFT = 8;
 
-    public SwipeToDelete(Context context, int swipeDirs) {
+    public SwipeHelper(Context context, int swipeDirs) {
         super(0, swipeDirs);
         this.context = context;
         paintLeft.setColor(Color.BLUE);

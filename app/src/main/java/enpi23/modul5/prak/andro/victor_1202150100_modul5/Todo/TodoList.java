@@ -1,7 +1,7 @@
-package enpi23.modul5.prak.andro.victor_1202150100_modul5;
+package enpi23.modul5.prak.andro.victor_1202150100_modul5.Todo;
 
 /**
- * Created by hakimrizki on 22/03/18.
+ * Created by enpi23 on 23/03/18.
  */
 
 public class TodoList {

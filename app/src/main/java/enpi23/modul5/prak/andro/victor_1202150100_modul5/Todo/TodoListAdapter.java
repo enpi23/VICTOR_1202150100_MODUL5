@@ -1,4 +1,4 @@
-package enpi23.modul5.prak.andro.victor_1202150100_modul5;
+package enpi23.modul5.prak.andro.victor_1202150100_modul5.Todo;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -9,8 +9,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import enpi23.modul5.prak.andro.victor_1202150100_modul5.Helper.DataBaseHelper;
+import enpi23.modul5.prak.andro.victor_1202150100_modul5.R;
+
 /**
- * Created by hakimrizki on 22/03/18.
+ * Created by enpi23 on 23/03/18.
  */
 
 public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ViewHolder> {
@@ -53,7 +56,7 @@ public class TodoListAdapter extends RecyclerView.Adapter<TodoListAdapter.ViewHo
 
     public void remove(int position) {
         final TodoList todo = mTodoList.get(position);
-        DataHelper dbHelper = new DataHelper(mContext);
+        DataBaseHelper dbHelper = new DataBaseHelper(mContext);
         dbHelper.deletePersonRecord(todo.getId(), mContext);
 
         mTodoList.remove(position);

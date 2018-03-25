@@ -1,4 +1,4 @@
-package enpi23.modul5.prak.andro.victor_1202150100_modul5;
+package enpi23.modul5.prak.andro.victor_1202150100_modul5.Helper;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,11 +10,13 @@ import android.widget.Toast;
 import java.util.LinkedList;
 import java.util.List;
 
+import enpi23.modul5.prak.andro.victor_1202150100_modul5.Todo.TodoList;
+
 /**
- * Created by hakimrizki on 22/03/18.
+ * Created by enpi23 on 23/03/18.
  */
 
-public class DataHelper extends SQLiteOpenHelper {
+public class DataBaseHelper extends SQLiteOpenHelper {
 
     public static final String TABLE_NAME = "todo_list";
     public static final String COLUMN_ID = "_id";
@@ -25,7 +27,7 @@ public class DataHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
 
-    public DataHelper(Context context) {
+    public DataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
@@ -82,23 +84,6 @@ public class DataHelper extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         return personLinkedList;
-    }
-
-    public TodoList getTodoList(long id) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        String query = "SELECT  * FROM " + TABLE_NAME + " WHERE _id=" + id;
-        Cursor cursor = db.rawQuery(query, null);
-
-        TodoList receivedTodoList = new TodoList();
-        if (cursor.getCount() > 0) {
-            cursor.moveToFirst();
-
-            receivedTodoList.setTodo(cursor.getString(cursor.getColumnIndex(COLUMN_TODO)));
-            receivedTodoList.setDescription(cursor.getString(cursor.getColumnIndex(COLUMN_DESCRIPTION)));
-            receivedTodoList.setPriority(cursor.getString(cursor.getColumnIndex(COLUMN_PRIORITY)));
-
-        }
-        return receivedTodoList;
     }
 
     public void deletePersonRecord(long id, Context context) {

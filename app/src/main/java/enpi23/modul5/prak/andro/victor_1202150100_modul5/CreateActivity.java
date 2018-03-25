@@ -8,23 +8,26 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import enpi23.modul5.prak.andro.victor_1202150100_modul5.Helper.DataBaseHelper;
+import enpi23.modul5.prak.andro.victor_1202150100_modul5.Todo.TodoList;
+
 public class CreateActivity extends AppCompatActivity {
 
-    EditText mTodo, mDescription, mPriority;
-    Button btnTambah;
-    DataHelper dbHelper;
+    EditText EdTodo, EdDesc, EdPriority;
+    Button AddBtn;
+    DataBaseHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
 
-        mTodo = (EditText) findViewById(R.id.ed_todo);
-        mDescription = (EditText) findViewById(R.id.ed_description);
-        mPriority = (EditText) findViewById(R.id.ed_priority);
-        btnTambah = (Button) findViewById(R.id.btn_tambah);
+        EdTodo = (EditText) findViewById(R.id.EdTodo);
+        EdDesc = (EditText) findViewById(R.id.EdDesc);
+        EdPriority = (EditText) findViewById(R.id.EdPriority);
+        AddBtn = (Button) findViewById(R.id.AddBtn);
 
-        btnTambah.setOnClickListener(new View.OnClickListener() {
+        AddBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 saveTodo();
@@ -33,10 +36,10 @@ public class CreateActivity extends AppCompatActivity {
     }
 
     private void saveTodo() {
-        String todo = mTodo.getText().toString().trim();
-        String description = mDescription.getText().toString().trim();
-        String priority = mPriority.getText().toString().trim();
-        dbHelper = new DataHelper(this);
+        String todo = EdTodo.getText().toString().trim();
+        String description = EdDesc.getText().toString().trim();
+        String priority = EdPriority.getText().toString().trim();
+        dbHelper = new DataBaseHelper(this);
 
         if (todo.isEmpty()) {
             Toast.makeText(this, "Masukkan To Do terlebih dahulu", Toast.LENGTH_SHORT).show();
@@ -51,6 +54,7 @@ public class CreateActivity extends AppCompatActivity {
         TodoList todoList = new TodoList(todo, description, priority);
         dbHelper.saveNewTodo(todoList);
         goBackHome();
+        //Setting ketika salah satu EditText tidak terisi
 
     }
 
